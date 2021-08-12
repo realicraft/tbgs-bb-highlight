@@ -1,0 +1,10 @@
+{
+    "iconDefinitions": {
+        "_tbgsbb": {
+            "iconPath": "./tbgsbb-icon.svg"
+        }
+    },
+    "fileExtensions": {
+        "tbgsbb": "_tbgsbb"
+    }
+}

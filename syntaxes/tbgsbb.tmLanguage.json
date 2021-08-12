@@ -1,0 +1,91 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "TBGS BBCode",
+	"patterns": [{"include": "#expression"}],
+	"repository": {
+		"expression": {
+			"patterns": [{"include": "#tags"}]
+		},
+		"tags": {
+			"patterns": [{"include": "#colorinvistag"},{"include": "#begintags"},{"include": "#endtags"},{"include": "#codetag"},{"include": "#listtag"}]
+		},
+		"begintags": {
+			"patterns": [{"include": "#begintags-basic"},{"include": "#begintags-adv"}]
+		},
+		"begintags-basic": {
+			"match": "\\[b\\]|\\[i\\]|\\[u\\]|\\[s\\]|\\[del\\]|\\[ins\\]|\\[em\\]|\\[h\\]",
+			"name": "keyword.tag"
+		},
+		"begintags-adv": {
+			"begin": "\\[quote=|\\[color=|\\[url=|\\[user=|\\[topic=|\\[email=|\\[post=|\\[forum=|\\[img=|\\[list=",
+			"end": "\\]",
+			"beginCaptures": {
+				"0": {"name": "keyword.tag"}
+			},
+			"endCaptures": {
+				"0": {"name": "keyword.tag"}
+			},
+			"name": "string",
+			"patterns": [{"include": "#tagnum"}]
+		},
+		"tagnum": {
+			"patterns": [{"include": "#tagint"},{"include": "#taghex"}]
+		},
+		"tagint": {
+			"match": "[0-9]",
+			"name": "constant.numeric"
+		},
+		"taghex": {
+			"match": "#[0-9A-Fa-f]+",
+			"name": "constant.numeric"
+		},
+		"endtags": {
+			"match": "\\[/b\\]|\\[/i\\]|\\[/u\\]|\\[/s\\]|\\[/del\\]|\\[/ins\\]|\\[/em\\]|\\[/h\\]|\\[/quote\\]|\\[/user\\]|\\[/topic\\]|\\[/email\\]|\\[/post\\]|\\[/forum\\]|\\[/img\\]|\\[/list\\]|\\[/color\\]",
+			"name": "keyword.tag"
+		},
+		"codetag": {
+			"begin": "\\[code\\]",
+			"end": "\\[/code\\]",
+			"beginCaptures": {
+				"0": {"name": "keyword.tag"}
+			},
+			"endCaptures": {
+				"0": {"name": "keyword.tag"}
+			}
+		},
+		"colorinvistag": {
+			"begin": "(\\[color=)(transparent)(\\])",
+			"end": "\\[/color\\]",
+			"beginCaptures": {
+				"1": {"name": "keyword.tag"},
+				"2": {"name": "string"},
+				"3": {"name": "keyword.tag"}
+			},
+			"endCaptures": {
+				"0": {"name": "keyword.tag"}
+			},
+			"name": "comment",
+			"patterns": [{"include": "#colorinvisalert"}]
+		},
+		"colorinvisalert": {
+			"match": "\\[u\\]|\\[/u\\]|\\[ur(l|l=[^\\]]+)\\]|\\[/url\\]|\\[im(g|g=[^\\]]+)\\]|\\[/img\\]",
+			"name": "invalid.illegal"
+		},
+		"listtag": {
+			"begin": "\\[lis(t|t=1|t=a)\\]",
+			"end": "\\[/list\\]",
+			"beginCaptures": {
+				"0": {"name": "keyword.tag"}
+			},
+			"endCaptures": {
+				"0": {"name": "keyword.tag"}
+			},
+			"patterns": [{"include": "#listelement"},{"include": "#tags"}]
+		},
+		"listelement": {
+			"match": "\\[\\*\\]|\\[/\\*\\]",
+			"name": "keyword.tag"
+		}
+	},
+	"scopeName": "text.tbgsbb"
+}

@@ -1,0 +1,25 @@
+{
+    "name": "tbgs-bb-highlight",
+    "displayName": "tbgs-bb-highlight",
+    "description": "Highlights BBCode for the TBGS.",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.59.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "tbgsbb",
+            "aliases": ["TBGS BBCode", "tbgsbb"],
+            "extensions": [".tbgsbb"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "tbgsbb",
+            "scopeName": "text.tbgsbb",
+            "path": "./syntaxes/tbgsbb.tmLanguage.json"
+        }]
+    }
+}
