@@ -2,7 +2,7 @@
     "name": "tbgs-bb-highlight",
     "displayName": "tbgs-bb-highlight",
     "description": "Highlights BBCode for the TBGS.",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "engines": {
         "vscode": "^1.59.0"
     },

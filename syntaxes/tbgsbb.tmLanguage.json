@@ -32,7 +32,7 @@
 			"patterns": [{"include": "#tagint"},{"include": "#taghex"}]
 		},
 		"tagint": {
-			"match": "[0-9]",
+			"match": "[0-9]+",
 			"name": "constant.numeric"
 		},
 		"taghex": {
@@ -40,7 +40,7 @@
 			"name": "constant.numeric"
 		},
 		"endtags": {
-			"match": "\\[/b\\]|\\[/i\\]|\\[/u\\]|\\[/s\\]|\\[/del\\]|\\[/ins\\]|\\[/em\\]|\\[/h\\]|\\[/quote\\]|\\[/user\\]|\\[/topic\\]|\\[/email\\]|\\[/post\\]|\\[/forum\\]|\\[/img\\]|\\[/list\\]|\\[/color\\]",
+			"match": "\\[/b\\]|\\[/i\\]|\\[/u\\]|\\[/s\\]|\\[/del\\]|\\[/ins\\]|\\[/em\\]|\\[/h\\]|\\[/quote\\]|\\[/user\\]|\\[/topic\\]|\\[/email\\]|\\[/post\\]|\\[/forum\\]|\\[/img\\]|\\[/list\\]|\\[/color\\]|\\[/url\\]",
 			"name": "keyword.tag"
 		},
 		"codetag": {

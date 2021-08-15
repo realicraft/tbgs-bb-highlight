@@ -6,4 +6,13 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## [Unreleased]
 
-- Initial release
+## 0.0.2 (8/15/21)
+
+### Fixed
+- `[/url]` wasn't being highlighted
+
+## 0.0.1 (8/11/21)
+
+### Added
+- `.tbgsbb` file type
+- Highlighting for most tags
